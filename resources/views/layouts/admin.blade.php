@@ -44,7 +44,7 @@
       </ul>
     </li>
     <li class=""><a title="" href="#"><i class="icon icon-cog"></i> <span class="text">Settings</span></a></li>
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+    <li class=""><a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
   </ul>
 </div>
 <!--close-top-Header-menu-->
@@ -124,7 +124,9 @@
 <div class="row-fluid">
   <div id="footer" class="span12"> 2013 © Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
 </div>
-
+<form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
 <!--end-Footer-part-->
 
 <script src="js/excanvas.min.js"></script> 
